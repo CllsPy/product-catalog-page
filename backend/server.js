@@ -4,7 +4,7 @@ import express from 'express';
 const app = express();
 
 app.get('/api/notes', (req, res) => {
-  res.status(200).send("Your Research Your 20 NotessssS!!")
+  res.status(200).send("Your Research Your 20 Notes!!")
 })
 
 app.post('/api/create', (req, res) => {
