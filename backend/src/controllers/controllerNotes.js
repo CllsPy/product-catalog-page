@@ -11,8 +11,13 @@ export const getAllNotes = async (req, res) => {
     }
 }
 
-export const createNote = (req, res) => {
-    res.status(201).json({"message": "Note created sucessfully!"})
+export const createNote = async (req, res) => {
+    try {
+        const newNote = await Note.create(req.body);
+        res.status(201).json(newNote);
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
 }
 
 export const updateNote = (req, res) => {
